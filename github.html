@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(61, 61, 61);
+        }
+
+        h1 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: 900;
+            font-size: 2rem;
+            text-align: center;
+            color: white;
+            width: 100%;
+            text-shadow: 5px 5px 5px orangered;
+            animation: heading-1 8s alternate;
+            z-index: 999999;
+        }
+
+        @keyframes heading-1 {
+            0% {
+                transform: translateY(-6rem)
+            }
+
+            20% {
+                transform: translateY(12rem);
+                position: absolute;
+            }
+
+            40% {
+                transform: translateY(12rem) rotate(90deg) scale(2.3) ;
+                position: absolute;
+            }
+
+            60% {
+                transform: translateY(12rem) rotate(0deg) scale(1.0);
+                position: absolute;
+            }
+
+            80% {
+                transform: translateY(-12rem);
+                position: absolute;
+            }
+
+            100% {
+                transform: translateY(0);
+                /* position: relative; */
+            }
+        }
+
+        .container-ghost {
+            width: 90%;
+            height: 90vh;
+            margin: 5rem auto;
+            text-align: center;
+            animation: scale 2s alternate;
+        }
+
+        @keyframes scale {
+            0% {
+                transform: scale(0.0);
+            }
+
+            100% {
+                transform: scale(1.0);
+            }
+        }
+
+        .container-ghost .ghost-body {
+            background-color: white;
+            width: 150px;
+            height: 200px;
+            margin: 3rem auto;
+            border-top-left-radius: 75px;
+            border-top-right-radius: 75px;
+            display: flex;
+            justify-content: center;
+            animation: body-ghost 5s infinite;
+            
+        }
+
+        @keyframes body-ghost {
+            0% {
+                transform: translateY(0); 
+                box-shadow: 0 5px 15px 3px;
+            }
+
+            50% {
+                transform: translateY(1.8rem); 
+                box-shadow: 0 10px 10px 3px;    
+            }
+
+            100% {
+                transform: translateY(0); 
+                box-shadow: 0 5px 15px 3px;        
+            }
+        }
+
+        .container-ghost .ghost-body .eyes-ghost {
+            background-color: black;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 3rem .5rem 0;
+        }
+
+        .container-ghost .ghost-body .mouth-ghost {
+            position: relative;
+            top: 1.5rem;
+            padding-top: 12px;
+        }
+
+        .shadow-rotate .ghost-shadow {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 150px;
+            height: 150px;
+            margin: -3rem auto;
+            border-radius: 50%;
+            box-shadow: 1px 1px 10px 10px black;
+            animation: bigendsmall 5s infinite;
+        }
+
+        .shadow-rotate {
+            transform: rotateX(80deg);
+        }
+
+        @keyframes bigendsmall {
+            0% {
+                transform: scale(1.0);
+            }
+
+            50% {
+                transform: scale(0.5);
+            }
+
+            100% {
+                transform: scale(1.0);
+            }
+        }
+
+    </style>    
+</head>
+<body>
+    <h1>Animation Ghost</h1>
+    <div class="container-ghost">
+        <div class="ghost-body">
+            <div class="eyes-ghost"></div>
+            <div class="eyes-ghost mouth-ghost"></div>
+            <div class="eyes-ghost"></div>
+        </div>
+        <div class="shadow-rotate">
+            <div class="ghost-shadow"></div>
+        </div>
+        
+    </div>
+</body>
+</html>
